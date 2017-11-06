@@ -3,5 +3,6 @@ class PracticeController < ApplicationController
   end
 
   def about
+  	@color = params[:color]
   end
 end
