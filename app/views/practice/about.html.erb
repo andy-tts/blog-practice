@@ -1,2 +1,12 @@
-<h1>Practice#about</h1>
-<p>Find me in app/views/practice/about.html.erb</p>
+<style>
+	#color_me_in {
+		background-color: <%= @color %>;
+		color: white;
+		width: 250px;
+		height: 250px;
+	}
+</style>
+
+<div id="color_me_in">
+	<p>You chose the color <%= @color %></p>
+</div>
