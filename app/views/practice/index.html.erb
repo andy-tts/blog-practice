@@ -1,4 +1,7 @@
 <h1>Choose a color</h1>
+<% if @name.nil? == false %>
+	<h2>Hi there <%= @name %>
+<% end %>
 <p>
 	<%= link_to "Red", about_path(color: "red") %>
 </p>
@@ -9,5 +12,10 @@
 	<%= link_to "Green", about_path(color: "green") %>
 </p>
 <p>
-	<%= link_to "Yellow", about_path(color: "yellow") %>
+	<%= link_to "Yellow", about_path(color: "Yellow") %>
 </p>
+
+<%= form_tag(index_path) do %>
+  <%= text_field_tag :name, nil, placeholder: "what is your name?" %>
+  <%= submit_tag :submit %>
+<% end %>
