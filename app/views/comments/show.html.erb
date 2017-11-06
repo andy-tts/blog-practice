@@ -10,5 +10,10 @@
   <%= @comment.comment_entry %>
 </p>
 
+<p>
+  <strong>Post title:</strong>
+  <%= @comment.post.title %>
+</p>
+
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>
