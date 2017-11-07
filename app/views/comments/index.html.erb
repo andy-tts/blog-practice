@@ -15,7 +15,7 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.author %></td>
+        <td><%= comment.user.email %></td>
         <td><%= comment.comment_entry %></td>
         <td><%= comment.post_id %></td>
         <td><%= link_to 'Show', comment %></td>

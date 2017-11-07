@@ -22,8 +22,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :post_author %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="actions">

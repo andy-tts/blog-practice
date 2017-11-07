@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :comment_author %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="field">
