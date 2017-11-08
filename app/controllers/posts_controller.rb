@@ -8,8 +8,13 @@ class PostsController < ApplicationController
   end
 
   def users_posts
-    @user = User.find(params[:id])
-    @users_posts = Post.where(user_id: params[:id])
+    if params[:username].present?
+      @user = User.find_by_username(params[:username])
+    else
+      @user = User.find(params[:id])
+    end
+    @username = get_username(@user)
+    @users_posts = Post.where(user: @user)
   end
 
   # GET /posts/1
@@ -77,5 +82,13 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :body, :user_id)
+    end
+
+    def get_username(user)
+      if user.present? 
+        user.username 
+      else
+        'No user found'
+      end 
     end
 end
