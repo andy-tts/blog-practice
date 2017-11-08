@@ -8,10 +8,6 @@ class PostsController < ApplicationController
   end
 
   def users_posts
-    puts '*'*80
-    puts current_user
-    puts current_user.email
-    puts current_user.id
     @users_posts = Post.where(user_id: current_user.id)
   end
 
