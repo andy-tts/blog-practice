@@ -8,7 +8,8 @@ class PostsController < ApplicationController
   end
 
   def users_posts
-    @users_posts = Post.where(user_id: current_user.id)
+    @user = User.find(params[:id])
+    @users_posts = Post.where(user_id: params[:id])
   end
 
   # GET /posts/1
