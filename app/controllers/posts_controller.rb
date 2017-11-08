@@ -7,6 +7,14 @@ class PostsController < ApplicationController
     @posts = Post.all.page(params[:page])
   end
 
+  def users_posts
+    puts '*'*80
+    puts current_user
+    puts current_user.email
+    puts current_user.id
+    @users_posts = Post.where(user_id: current_user.id)
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
